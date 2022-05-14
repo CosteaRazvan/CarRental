@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../scripts/index.js"></script>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/body.css">
+    <title>Rent a car</title>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <nav class="nav" id="navBar">
+        <span><a href="index.html">Home</a></span>
+        <a href="how.html">How it works</a>
+        <a href="rent.html">Rent</a>
+        <a href="login.html">Log in</a>
+        <a href="register.html">Register</a>
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">&#9776;</a>
+    </nav>
+
+    
+    <div class="split first">
+        <h3 class="motto">
+            Search, book and rent vehicles easily
+        </h3>
+    </div>
+    <div class="split second">
+        <form action="../views/rent.html" method="get">
+            <p><h2>Quick search</h2></p>
+            <p>
+                <label for="location">Location</label>
+                <input type="text" name="location" id="location" 
+                                    placeholder="University Square, Bucharest">
+            </p>
+            <p>
+                <label for="start">Start date</label>
+                <input type="datetime-local" name="start" id="start"
+                                    placeholder="04/05/2022, 10:12 AM">
+            </p>
+            <p>
+                <label for="start">End date</label>
+                <input type="datetime-local" name="end" id="end"
+                                    placeholder="10/05/2022, 10:12 AM">
+            </p>
+            <p><input type="submit" name="search" id="search" value="Search"></p>
+        </form>
+    </div>
+  
+</body>
+
+</html>

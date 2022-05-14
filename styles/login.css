@@ -1,0 +1,35 @@
+form {
+
+    position: relative;
+    padding: 2rem;
+    font-size: x-large;
+    align-items: center;
+    top: 30%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+            ". email ."
+            ". pass ."
+            ". btn .";
+    z-index: 20;
+}
+
+input {
+    font-size: 25px;
+    padding: 0.5rem;
+}
+
+.emailSection {
+    grid-area: email;
+}
+
+.passSection {
+    grid-area: pass;
+}
+
+.submitSection {
+    grid-area: btn;
+    border-radius: 15px;
+}

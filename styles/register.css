@@ -1,0 +1,40 @@
+form {
+
+    position: relative;
+    padding: 2rem;
+    font-size: x-large;
+    align-items: center;
+    top: 30%;
+    margin-left: 20%;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    z-index: 20;
+}
+
+input {
+    font-size: 25px;
+    padding: 0.5rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+form div {
+    position: relative;
+    display: flex;
+    padding: 0.5rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.nameLabel {
+    grid-area: nameLabel;
+}
+
+.fname {
+    grid-area: fname;
+}
+
+.lname {
+    grid-area: lname;
+}
+

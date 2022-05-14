@@ -1,0 +1,32 @@
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right center;
+    background-size: 70vw;
+}
+
+.split {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.first {
+    background-color: rgba(100, 148, 237, 0.221);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 50%;
+}
+
+.second {
+    background-color: rgba(211, 211, 211, 0.221);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
