@@ -17,6 +17,9 @@
 
     <div class="split first">
         <div id="filterForm">
+            <% if(warning){%>
+                <h3 class="warning"><%=warning%></h3>
+                <%}%>
             <label for="make">Make</label>
             <select name="make" id="make" form="filterForm">
             </select>

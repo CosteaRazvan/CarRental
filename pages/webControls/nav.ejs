@@ -1,8 +1,12 @@
 <nav class="nav" id="navBar">
-    <span><a href="/home">Home</a></span>
+    <span><a href="/">Home</a></span>
     <a href="/how_it_works">How it works</a>
     <a href="/rent">Rent</a>
+    <% if(user){ %>
+        <a href="/logout">Logout</a>
+    <%} else {%>
     <a href="/login">Log in</a>
     <a href="/register">Register</a>
+    <%}%>
     <a href="javascript:void(0);" class="icon" onclick="responsive()">&#9776;</a>
 </nav>

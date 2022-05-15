@@ -8115,7 +8115,7 @@ function addRow(car, filters, index){
        }
     }
 
-    row.insertCell(-1).innerHTML = `<button onclick="selectCar(${row.id})">Select</button>`;
+    row.insertCell(-1).innerHTML = `<button class="selectBtn" onclick="selectCar(${row.id})">Select</button>`;
     
 }
 
@@ -8178,6 +8178,8 @@ function fillRentForm(){
   document.getElementById("start").value = start != null ? start : "";
   document.getElementById("end").value = end != null ? end : "";
 
+  document.getElementById("location").value = location != null ? location : "";
+  filter();
 }
 
 
@@ -8191,7 +8193,7 @@ function init(){
   setTimeout(function(){
     renderCars(cars);
     fillRentForm();
-  }, 5);
+  }, 2);
 }
 
 window.onload = init();
