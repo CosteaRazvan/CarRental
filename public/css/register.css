@@ -1,0 +1,51 @@
+form {
+
+    position: relative;
+    padding: 2rem;
+    font-size: x-large;
+    align-items: center;
+    top: 30%;
+    margin-left: 20%;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    z-index: 20;
+}
+
+input {
+    font-size: 15px;
+    padding: 0.3rem;
+    margin: 1rem 1rem 1rem 1rem;
+    position: relative;
+    /* display: flex; */
+    width: 40%;
+}
+
+@media screen and (max-width: 1024px) {
+    input {
+        width: 50%;
+    }
+    
+}
+
+@media screen and (max-width: 725px) {
+    input {
+        width: 50%;
+    }
+}
+
+
+/* .nameLabel {
+    grid-area: nameLabel;
+}
+
+.fname {
+    grid-area: fname;
+}
+
+.lname {
+    grid-area: lname;
+} */
+
