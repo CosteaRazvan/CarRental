@@ -8194,6 +8194,24 @@ function init(){
     renderCars(cars);
     fillRentForm();
   }, 2);
+
+  setInterval(function(){
+    document.getElementById("randomCar").style.visibility='visible';
+    const index = Math.floor(Math.random() * cars.length);
+    const car = cars[index];
+
+    let button = document.createElement("button");
+     
+    button.type = 'button';
+    button.innerHTML = index;
+    button.className = 'randomBtn';
+    button.onclick = function(){
+      selectCar(index);
+    }
+    
+    document.getElementById("randomCar").appendChild(button);
+
+  }, 10000);
 }
 
 window.onload = init();

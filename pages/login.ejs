@@ -13,11 +13,8 @@
 
     <%- include('webControls/nav.ejs'); %>
     
-    <div class="split first">
+    <section class="split first">
         <form target="_self" method="post">
-            <% if(warning) {%>
-                <%=warning%>     
-             <%}%>
             <div class="emailSection">
                 <label for="userEmail">Email: </label>
                 <br><br>
@@ -32,12 +29,15 @@
             <br><br>
             <div class="submitSection">
                 <input type="submit" name="loginSubmit" id="loginSubmit">
+                <% if(warning) {%>
+                    <h4 class="warning"><%=warning%></h4>
+                 <%}%>
             </div>  
         </form>
-    </div>
-    <div class="split second">
-        
-    </div>
+    </section>
+    <section class="split second">
+    
+    </section>
     
 </body>
 </html>

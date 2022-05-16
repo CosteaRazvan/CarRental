@@ -15,11 +15,64 @@
 <body>
     <%- include('webControls/nav.ejs'); %>
 
-    <div class="split first">
+    <main class="main">
+        <section id="randomCar">
+            You can't decide? Consider one of this:
+        </section>
+        <form id="selectedCar" action="" method="post">
+            <!-- <div>
+                <label for="description">Description</label>
+                <input type="text" name="description" id="rentInput0">        
+            </div>
+
+            <div>
+                <label for="make">Make</label>
+                <input type="text" name="make" id="rentInput1" readonly>
+            </div>
+            
+            <div>
+                <label for="model">Model</label>
+                <input type="text" name="model" id="rentInput2" readonly>
+            </div>
+            
+            <div>
+                <label for="fuel">Fuel</label>
+                <input type="text" name="fuel" id="rentInput3">
+            </div>
+
+            <div>
+                <label for="transmission">Transmission</label>
+                <input type="text" name="transmission" id="rentInput4" readonly>
+            </div>
+            
+            <div>
+                <label for="location">Location</label>
+                <input type="text" name="location" id="rentInput5" readonly>
+            </div>
+           
+            <div>
+                <label for="start">Start date</label>
+                <input type="datetime-local" name="start" id="start">
+            </div>
+           
+            <div>
+                <label for="start">End date</label>
+                <input type="datetime-local" name="end" id="end">
+            </div> -->
+            <input type="text" name="description" id="rentInput0" placeholder="Description" readonly>
+            <input type="text" name="make" id="rentInput1" placeholder="Make" readonly> 
+            <input type="text" name="model" id="rentInput2" placeholder="Model" readonly>
+            <input type="text" name="fuel" id="rentInput3" placeholder="Fuel" readonly>
+            <input type="text" name="transmission" id="rentInput4" placeholder="Transmission" readonly>
+            <input type="text" name="location" id="rentInput5" placeholder="Location" readonly>
+            <input type="datetime-local" name="start" id="start" placeholder="Start date">
+            <input type="datetime-local" name="end" id="end" placeholder="End date">
+            <input type="submit" value="Rent">
+        </form> 
+        <% if(warning){%>
+            <h3 class="warning"><%=warning%></h3>
+            <%}%>   
         <div id="filterForm">
-            <% if(warning){%>
-                <h3 class="warning"><%=warning%></h3>
-                <%}%>
             <label for="make">Make</label>
             <select name="make" id="make" form="filterForm">
             </select>
@@ -35,28 +88,8 @@
             <label for="location">Location</label>
             <select name="location" id="location" form="filterForm">
             </select>
-            <button onclick="filter()">Filter</button>
+            <button class="filterBtn" onclick="filter()">Filter</button>
         </div>
-
-        <form id="selectedCar" action="" method="post">
-            <label for="description">Description</label>
-            <input type="text" name="description" id="rentInput0">
-            <label for="make">Make</label>
-            <input type="text" name="make" id="rentInput1">
-            <label for="model">Model</label>
-            <input type="text" name="model" id="rentInput2">
-            <label for="fuel">Fuel</label>
-            <input type="text" name="fuel" id="rentInput3">
-            <label for="transmission">Transmission</label>
-            <input type="text" name="transmission" id="rentInput4">
-            <label for="location">Location</label>
-            <input type="text" name="location" id="rentInput5">
-            <label for="start">Start date</label>
-            <input type="datetime-local" name="start" id="start">
-            <label for="start">End date</label>
-            <input type="datetime-local" name="end" id="end">
-            <input type="submit" value="Rent">
-        </form> 
 
         <table id="cars">
             <thead>
@@ -66,7 +99,7 @@
                 
             </tbody>
         </table>
-    </div>
+    </main>
     <!-- <div class="split second">
         
     </div> -->

@@ -1,3 +1,11 @@
+body {
+    background-color: rgb(236, 232, 232);
+}
+
+main {
+    background-color: rgba(137, 145, 205, 0.5);
+}
+
 #cars {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
@@ -7,12 +15,16 @@
 }
   
 #cars td, #cars th {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(185, 170, 170);
     padding: 8px;
 }
 
 #cars tr:nth-child(even){
     background-color: #f2f2f2;
+}
+
+#cars tr:nth-child(odd){
+    background-color: white;
 }
 
 #cars tr {
@@ -37,28 +49,38 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: blue;
+    background-color: rgb(53, 53, 226);
     color: white;
 }
 
 #filterForm {
-    margin: 10% 5% 0% 0%;
+    display: inline-block;
     width: 90%;
-    /* border: 1px solid; */
-    padding: 2rem;
+    border: 3px outset;
+    padding: 1rem;
+    margin-left: 5%;
+    background-color: rgb(200, 200, 219);;
 }
 
-#filterForm select, input {
+#filterForm select{
     margin: 5px 10px 5px 0;
     padding: 10px;
     border-radius: 5px;
     font-size: large;
+    max-width: 12rem;
 }
 
+.filterBtn {
+    font-size: 1.3rem;
+}
+
+
 #selectedCar {
-    margin: 0% 5% 0% 0%;
-    width: 90%;
-    /* border: 1px solid; */
+    margin: 2% 5% 0% 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 70%;
     padding: 2rem;
 }
 
@@ -69,6 +91,36 @@
     font-size: large;
 }
 
+@media screen and (max-width: 915px) {
+    #selectedCar {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 570px) {
+    #selectedCar {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    
+}
+
 .warning {
     color: red;
+    margin-left: 5%;
 }
+
+#randomCar {
+    font-size: large;
+    visibility: hidden;
+    
+}
+
+.randomBtn {
+    border-radius: 50px;
+    padding: 0.5rem;
+    position: relative;
+}
+

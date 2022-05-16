@@ -33,3 +33,7 @@ input {
     grid-area: btn;
     border-radius: 15px;
 }
+
+.warning {
+    color: red;
+}

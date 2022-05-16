@@ -33,6 +33,16 @@ app.use(bodyParser.urlencoded({
 
 app.post('/rent', (req, res) => {
     if(session){
+        if(req.body.description == ""){
+            res.render("rent", {warning:"Please select a car", user:session});
+            return;
+        }
+
+        if(req.body.start == "" || req.body.end == ""){
+            res.render("rent", {warning:"Please insert date", user:session});
+            return;
+        }
+
         let rent = {
             description: req.body.description,
             make: req.body.make,
@@ -68,7 +78,7 @@ app.use(bodyParser.urlencoded({
 app.post('/login', function (req, res) {
     const body = req.body;
     if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(body.userEmail)){
-        res.render("login", {warning: "Email is not valid"});
+        res.render("login", {warning: "Email is not valid", user:session});
         return;
     }
 
@@ -77,7 +87,6 @@ app.post('/login', function (req, res) {
         const user = fs.readFileSync(path.join('database/users', userID));
         return JSON.parse(user);
     })
-
     let found = 0;
     users.forEach(user => {
         if(user.email == body.userEmail && user.pass == body.userPass){
@@ -89,7 +98,7 @@ app.post('/login', function (req, res) {
     });
 
     if(found == 0){
-        res.render("login", {warning: "User does not exist"});
+        res.render("login", {warning: "User does not exist", user:session});
     }
 });
 
@@ -103,29 +112,34 @@ app.use(bodyParser.urlencoded({
 
 app.post('/register', function (req, res) {
     const body = req.body;
+
+    if(body.fname == "" || body.lname == "" || body.email == "" || body.pass == "" || body.confPass == "" || body.age == ""){
+        res.render("register", {warning: "All fields are required", user:session});
+        return;
+    }
     
     if(body.pass != body.confPass){
-        res.render("register", {warning: "Passwords do not match"});
+        res.render("register", {warning: "Passwords do not match", user:session});
         return;
     }
 
     if(!/^[a-zA-Z ]+$/.test(body.fname)){
-        res.render("register", {warning: "First name is not valid"});
+        res.render("register", {warning: "First name is not valid", user:session});
         return;
     }
 
     if(!/^[a-zA-Z ]+$/.test(body.lname)){
-        res.render("register", {warning: "Last name is not valid"});
+        res.render("register", {warning: "Last name is not valid", user:session});
         return;
     }
 
     if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(body.email)){
-        res.render("register", {warning: "Email is not valid"});
+        res.render("register", {warning: "Email is not valid", user:session});
         return;
     }
 
     if(parseInt(body.age) < 18){
-        res.render("register", {warning: "You are under 18"});
+        res.render("register", {warning: "You are under 18", user:session});
         return;
     }
 
@@ -148,6 +162,10 @@ app.get('/how_it_works', function (req, res) {
 app.get('/logout', function (req, res) {
     session = null;
     res.render("index", {user:session});
+});
+
+app.get('*', function(req, res){
+    res.render('404');
 });
 
 app.listen(process.env.PORT || 3000);
