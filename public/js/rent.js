@@ -7991,9 +7991,9 @@ let cars = [
     "Transmission": "Automatic transmission",
     "Location": "IKEA Pallady"
   }
-]
+];
 
-
+let rentIDs = [];
 
 let optionsRendered = 0;
 
@@ -8182,6 +8182,31 @@ function fillRentForm(){
   filter();
 }
 
+// function markRentCar(){
+
+//   let rent = {
+//     description: document.getElementById("rentInput0").innerHTML,
+//     make: document.getElementById("rentInput1").innerHTML,
+//     model: document.getElementById("rentInput2").innerHTML,
+//     fuel: document.getElementById("rentInput3").innerHTML,
+//     transmission: document.getElementById("rentInput4").innerHTML,
+//     location: document.getElementById("rentInput5").innerHTML,
+//     start: document.getElementById("start").innerHTML,
+//     end: document.getElementById("end").innerHTML
+//   }
+
+//   console.log(rent);
+
+//   rentIDs.push(cars.findIndex(car => {
+//     return car.description == rent.description || 
+//            car.make == rent.make ||
+//            car.model == rent.model ||
+//            car.fuel == rent.fuel ||
+//            car.transmission == rent.transmission ||
+//            car.location == rent.location; 
+//   }));
+//   console.log(rentIDs);
+// }
 
 function init(){
 
@@ -8193,7 +8218,9 @@ function init(){
   setTimeout(function(){
     renderCars(cars);
     fillRentForm();
+    //document.getElementById("rentBtn").onclick = markRentCar();
   }, 2);
+
 
   setInterval(function(){
     document.getElementById("randomCar").style.visibility='visible';
@@ -8203,11 +8230,15 @@ function init(){
     let button = document.createElement("button");
      
     button.type = 'button';
-    button.innerHTML = index;
+    button.innerHTML = '&#128663';
     button.className = 'randomBtn';
     button.onclick = function(){
       selectCar(index);
     }
+
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+    button.style.backgroundColor = '#' + randomColor;
     
     document.getElementById("randomCar").appendChild(button);
 
@@ -8215,3 +8246,5 @@ function init(){
 }
 
 window.onload = init();
+
+

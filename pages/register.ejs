@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/dropdown.js"></script>
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/body.css">
@@ -13,23 +14,19 @@
 
     <%- include('webControls/nav.ejs'); %>
     
-    <section class="split first">
+    <section class="">
         <form target="_self" method="post">
             <% if(warning) {%>
                <%=warning%>     
             <%}%>
             <input class="fname" type="text" name="fname" id="fname" placeholder="First Name">
-            <input class="fname" type="text" name="lname" id="lname" placeholder="Last Name">
+            <input class="lname" type="text" name="lname" id="lname" placeholder="Last Name">
             <input class="email" type="text" name="email" id="email" placeholder="Email">
             <input class="pass" type="password" name="pass" id="pass" placeholder="Password">
             <input class="confPass" type="password" name="confPass" id="confPass" placeholder="Confirm password">
             <input class="age" type="number" name="age" id="age" placeholder="Age">
-            <input type="submit" value="Register">
+            <input class="submit" type="submit" value="Register">
         </form>
     </section>
-    <section class="split second">
-        
-    </section>
-    
 </body>
 </html>

@@ -1,4 +1,4 @@
-form {
+/* form {
 
     position: relative;
     padding: 2rem;
@@ -20,7 +20,7 @@ input {
     margin: 1rem 1rem 1rem 1rem;
     position: relative;
     /* display: flex; */
-    width: 40%;
+    /*width: 40%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -34,11 +34,42 @@ input {
     input {
         width: 50%;
     }
+} */
+
+
+
+body {
+    background-color: rgba(211, 211, 211, 0.221);
 }
 
+form {
+    background-color: rgba(100, 148, 237, 0.221);
+    position: relative;
+    padding: 2rem;
+    font-size: x-large;
+    align-items: center;
+    margin-top: 10%;
+    border: 1px dashed;
+    border-radius: 2rem;
 
-/* .nameLabel {
-    grid-area: nameLabel;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: 
+            ". fname ."
+            ". lname ."
+            ". email ."
+            ". pass ."
+            ". confPass ."
+            ". age ."
+            ". submit .";
+    z-index: 20;
+}
+
+input {
+    font-size: large;
+    padding: 0.5rem;
+    margin: 0.5rem;
 }
 
 .fname {
@@ -47,5 +78,30 @@ input {
 
 .lname {
     grid-area: lname;
-} */
+}
+
+.email {
+    grid-area: email;
+}
+
+.pass {
+    grid-area: pass;
+}
+
+.confPass {
+    grid-area: confPass;
+}
+
+.age {
+    grid-area: age;
+}
+
+.submit {
+    grid-area: submit;
+}
+
+
+.warning {
+    color: red;
+}
 

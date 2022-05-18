@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 
 
 app.get('/rent', function (req, res) {
-    res.render("rent", {warning:"", user:session});
+    res.render("rent", {warning:"", user:session, rent:null});
 });
 
 app.use(bodyParser.json());
@@ -34,12 +34,12 @@ app.use(bodyParser.urlencoded({
 app.post('/rent', (req, res) => {
     if(session){
         if(req.body.description == ""){
-            res.render("rent", {warning:"Please select a car", user:session});
+            res.render("rent", {warning:"Please select a car", user:session, rent:null});
             return;
         }
 
         if(req.body.start == "" || req.body.end == ""){
-            res.render("rent", {warning:"Please insert date", user:session});
+            res.render("rent", {warning:"Please insert date", user:session, rent:null});
             return;
         }
 
@@ -54,10 +54,11 @@ app.post('/rent', (req, res) => {
             end: req.body.end
         }
 
-        res.render("finish", {user:session, rent:rent});
+
+        res.render("rent", {warning:"", user:session, rent:rent});
     }
     else{
-        res.render("rent", {warning:"Please log in", user:session});
+        res.render("rent", {warning:"Please log in", user:session, rent:null});
     }
 });
 

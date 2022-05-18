@@ -1,8 +1,16 @@
+body {
+    background-color: rgba(211, 211, 211, 0.221);
+}
+
 .details {
     position: absolute;
-    margin: 10% 5% 0% 5%;
+    margin: 5% 5% 0% 5%;
     font-size: x-large;
     z-index: 20;
+    border: 1px dashed;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: rgba(100, 148, 237, 0.221);
 }
 
 

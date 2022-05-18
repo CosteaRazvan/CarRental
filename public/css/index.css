@@ -8,6 +8,7 @@ body {
     left: 15%;
     font-size: 2em;
     width: 50vw;
+    
 }
 
 form {
@@ -49,6 +50,7 @@ form p {
     form {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        left: 10%;
     }
     
 }
@@ -57,6 +59,18 @@ form p {
     form {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
+        left: 25%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        background-image: none;
+    }
+
+    form {
+        left: 10%;
     }
 
 }

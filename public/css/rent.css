@@ -1,9 +1,10 @@
 body {
-    background-color: rgb(236, 232, 232);
+    background-color: rgba(211, 211, 211, 0.221);
 }
 
 main {
-    background-color: rgba(137, 145, 205, 0.5);
+    background-color: rgba(100, 148, 237, 0.221);
+    margin-top: 2%;
 }
 
 #cars {
@@ -12,12 +13,26 @@ main {
     width: 90%;
     margin: 5% 5% 0% 5%;
     border: 1px solid;
+    border-radius: 2rem;
 }
   
 #cars td, #cars th {
     border: 1px solid rgb(185, 170, 170);
     padding: 8px;
 }
+
+#cars th:first-child {
+    border-radius: 2rem 0 0 0;
+}
+
+#cars tr:last-child td:first-child {
+    border-radius: 0 0 0 2rem;
+}
+
+#cars tr:last-child td:last-child {
+    border-radius: 0 0 2rem 0;
+}
+
 
 #cars tr:nth-child(even){
     background-color: #f2f2f2;
@@ -55,11 +70,11 @@ main {
 
 #filterForm {
     display: inline-block;
-    width: 90%;
+    /* width: 90%; */
     border: 3px outset;
     padding: 1rem;
     margin-left: 5%;
-    background-color: rgb(200, 200, 219);;
+    background-color: rgba(78, 114, 182, 0.221);
 }
 
 #filterForm select{
@@ -76,7 +91,7 @@ main {
 
 
 #selectedCar {
-    margin: 2% 5% 0% 5%;
+    margin: 2% 5% 0% 10%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -115,12 +130,31 @@ main {
 #randomCar {
     font-size: large;
     visibility: hidden;
-    
+    text-align: center;
 }
 
 .randomBtn {
-    border-radius: 50px;
+    border-radius: 1rem;
     padding: 0.5rem;
     position: relative;
+    font-size: large;
 }
+
+.rentCar  {
+    animation-name: color-change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    text-align: center;
+}
+
+@keyframes color-change {
+    0%    {color: red}
+    14%   {color: orange}
+    28%   {color: yellow}
+    42%   {color: green}
+    56%   {color: blue}
+    70%   {color: indigo}
+    84%  {color: purple}
+    100%    {color: red}
+  }
 

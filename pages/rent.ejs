@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/index.js"></script>
+    <script src="/js/dropdown.js"></script>
     <script src="/js/rent.js"></script>
     <link rel="stylesheet" href="/css/rent.css">
     <link rel="stylesheet" href="/css/nav.css">
@@ -15,6 +15,12 @@
 <body>
     <%- include('webControls/nav.ejs'); %>
 
+    <section>
+        <% if(rent){%>
+            <h3 class="rentCar">You rented <%=rent.description%> from <%=rent.location%> between <%=rent.start%>  and <%=rent.end%></h3>
+            <%}%>   
+    </section>
+    
     <main class="main">
         <section id="randomCar">
             You can't decide? Consider one of this:
@@ -67,28 +73,32 @@
             <input type="text" name="location" id="rentInput5" placeholder="Location" readonly>
             <input type="datetime-local" name="start" id="start" placeholder="Start date">
             <input type="datetime-local" name="end" id="end" placeholder="End date">
-            <input type="submit" value="Rent">
+            <% if(user){%>
+                <input type="submit" id="rentBtn" value="Rent">
+            <%}else{%>   
+                <input type="submit" id="rentBtn" value="Rent(First, login)" disabled>
+            <%}%>
         </form> 
         <% if(warning){%>
             <h3 class="warning"><%=warning%></h3>
             <%}%>   
         <div id="filterForm">
             <label for="make">Make</label>
-            <select name="make" id="make" form="filterForm">
+            <select name="make" id="make" form="filterForm" onchange="filter()">
             </select>
             <label for="model">Model</label>
-            <select name="model" id="model" form="filterForm">
+            <select name="model" id="model" form="filterForm" onchange="filter()">
             </select>
             <label for="fuel">Fuel</label>
-            <select name="fuel" id="fuel" form="filterForm">
+            <select name="fuel" id="fuel" form="filterForm" onchange="filter()">
             </select>
             <label for="transmission">Transmission</label>
-            <select name="transmission" id="transmission" form="filterForm">
+            <select name="transmission" id="transmission" form="filterForm" onchange="filter()">
             </select>
             <label for="location">Location</label>
-            <select name="location" id="location" form="filterForm">
+            <select name="location" id="location" form="filterForm" onchange="filter()">
             </select>
-            <button class="filterBtn" onclick="filter()">Filter</button>
+            <!-- <button class="filterBtn" onclick="filter()">Filter</button> -->
         </div>
 
         <table id="cars">

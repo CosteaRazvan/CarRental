@@ -1,10 +1,16 @@
-form {
+body {
+    background-color: rgba(211, 211, 211, 0.221);
+}
 
+form {
+    background-color: rgba(100, 148, 237, 0.221);
     position: relative;
     padding: 2rem;
     font-size: x-large;
     align-items: center;
-    top: 30%;
+    margin-top: 10%;
+    border: 1px dashed;
+    border-radius: 2rem;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -17,7 +23,7 @@ form {
 }
 
 input {
-    font-size: 25px;
+    font-size: large;
     padding: 0.5rem;
 }
 
