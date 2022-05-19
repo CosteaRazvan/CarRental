@@ -153,7 +153,7 @@ app.post('/register', function (req, res) {
     };
 
     fs.writeFileSync('database/users/' + uuid.v1() + '.json', JSON.stringify(newUser));
-    res.render('index');
+    res.render("index", {user:session});
 });
 
 app.get('/how_it_works', function (req, res) {
